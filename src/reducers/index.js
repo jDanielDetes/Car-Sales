@@ -16,4 +16,7 @@ const addedReducer =(addedFeature=null,action)=>{
     return addedFeature
 }
 
-combineReducers({}
+export default combineReducers({
+    features:tstReducer,
+    added:addedReducer
+})
