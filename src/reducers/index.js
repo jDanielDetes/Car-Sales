@@ -11,6 +11,8 @@ const tstReducer =() =>{
 
 const addedReducer =(addedFeature=[],action)=>{
     if(action.type === 'ADD_FEATURE'){
+     
+   
         return action.payload
     }
     return addedFeature
@@ -20,3 +22,16 @@ export default combineReducers({
     features:tstReducer,
     added:addedReducer
 })
+
+{/*const addedReducer =(addedFeature=initialState,action)=>{
+    switch(action.type){
+        case 'ADD_FEATURE' :
+            return {
+                ...addedFeature, features:[...addedFeature.parts,{part:action.payload}]
+            }
+     
+        default:
+        return addedFeature
+    }
+    return addedFeature
+} */}

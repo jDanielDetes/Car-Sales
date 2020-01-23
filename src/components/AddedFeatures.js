@@ -18,6 +18,7 @@ const AddedFeatures = props => {
 };
 
 const mapStateToProps = (state) =>{
+  
   return {parts:state.added}
 }
 
