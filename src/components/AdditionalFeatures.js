@@ -1,6 +1,7 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 import {connect} from 'react-redux'
+import {addFeature} from '../actions/addAction'
 
  class AdditionalFeatures extends React.Component {
 
@@ -10,7 +11,12 @@ import {connect} from 'react-redux'
       return(
 <div className="content">
       <h4>Additional Features</h4>
-      <AdditionalFeature key={features.id} name={features.name} price={features.price}/>
+      
+      <AdditionalFeature id={features.id} name={features.name} price={features.price}/>
+      <button 
+      className="button"
+      onClick={()=>this.props.addFeature(features)}
+      >Add</button>
         </div>
       )
     })
@@ -18,6 +24,7 @@ import {connect} from 'react-redux'
  
  }
  render(){
+   
   return (
     <div>{this.renderList()}</div>
 );
@@ -25,9 +32,9 @@ import {connect} from 'react-redux'
 }
 
 const mapStateToProps=(state)=>{
-  
+console.log(state)
   return {features: state.features}
   }
 
 
-export default connect(mapStateToProps)(AdditionalFeatures);
+export default connect(mapStateToProps,{addFeature})(AdditionalFeatures);

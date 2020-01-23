@@ -1,4 +1,4 @@
-import {combinedReducers, combineReducers} from 'redux'
+import {combineReducers} from 'redux'
 
 const tstReducer =() =>{
     return [
@@ -9,9 +9,9 @@ const tstReducer =() =>{
     ]
 }
 
-const addedReducer =(addedFeature=null,action)=>{
-    if(action.type ==='ADD_FEATURE'){
-        return action.payload;
+const addedReducer =(addedFeature=[],action)=>{
+    if(action.type === 'ADD_FEATURE'){
+        return action.payload
     }
     return addedFeature
 }
